@@ -102,7 +102,7 @@ isuProxy(){
 
 export PATH=${PATH}:~/scripts
 export EDITOR='vim'
-export BROWSER='chromium'
+export BROWSER='firefox'
 
 export SYSTEMC=/usr/local/systemc/
 
@@ -116,8 +116,6 @@ alias cp='cp -ip'
 alias b='cd ..'
 alias ps='ps -el'
 alias ll='ls -l'
-
-alias emacs='emacs -nw'
 
 alias pacfiles='find /etc -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
 
