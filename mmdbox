@@ -1,0 +1,19 @@
+#!/bin/bash
+#mmdbox script by mmd
+
+function alive {
+    DATE=2009/12/12
+    DAYS=$((($(date +%s)-$(date -d "$DATE" +%s))/(24*60*60)))
+    YEARS=$[$DAYS/365]
+    echo -e "$DAYS days\n$YEARS years"
+}
+
+
+case $1 in
+  mon   )   xinput set-int-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 8 1;;
+  moff  )   xinput set-int-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 8 0;;
+  binc  )   xbacklight -inc 10;;
+  bdec  )   xbacklight -dec 10;;
+  alive )   alive;;
+  *     )   echo -e "options: \n\tmon \n\tmoff \n\tbinc \n\tbdec \n\talive"
+esac
