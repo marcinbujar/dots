@@ -90,6 +90,14 @@ assignProxy(){
 #}
 
 
+alive() {
+    DATE=2009/12/12
+    DAYS=$((($(date +%s)-$(date -d "$DATE" +%s))/(24*60*60)))
+    YEARS=$[$DAYS/365]
+    echo -e "$DAYS days\n$YEARS years"
+}
+
+
 
 # ENVIRONMENT
 
@@ -111,9 +119,11 @@ alias ps='ps -el'
 alias ll='ls -l'
 
 alias pacfiles='find /etc -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
-
 alias arch='alsi -a'
-
-alias rdesktop_mmdbigbox='rdesktop -g 1280x720 -P -z -x l -k en-gb -r sound:off -u mmd 192.168.1.30:3389'
-
 alias rtfn='elinks https://www.archlinux.org/feeds/news/'
+
+alias mouseOff='xinput set-int-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 8 1'
+alias mouseOn='xinput set-int-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 8 0'
+
+alias brightInc='xbacklight -inc 10'
+alias brightDec='xbacklight -dec 10'
