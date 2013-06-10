@@ -1,19 +1,14 @@
 # mmd bash config
 
-# If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-
-# Bash won't get SIGWINCH if another process is in the foreground.
-# Enable checkwinsize so that bash will check the terminal size when
-# it regains control.
-# http://cnswww.cns.cwru.edu/~chet/bash/FAQ (E11)
+# check terminal size
 shopt -s checkwinsize
 
-# Enable history appending instead of overwriting.  #139609
+# enable history appending instead of overwriting.
 shopt -s histappend
 
-# Change the window title of X terminals 
+# change the window title of X terminals 
 case ${TERM} in
 	xterm*|rxvt*|Eterm|aterm|kterm|gnome*|interix)
 		PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\007"'
@@ -25,11 +20,7 @@ esac
 
 use_color=false
 
-# Set colorful PS1 only on colorful terminals.
-# dircolors --print-database uses its own built-in database
-# instead of using /etc/DIR_COLORS.  Try to use the external file
-# first to take advantage of user additions.  Use internal bash
-# globbing instead of external grep binary.
+# set colorful PS1
 safe_term=${TERM//[^[:alnum:]]/?}   # sanitize TERM
 match_lhs=""
 [[ -f ~/.dir_colors   ]] && match_lhs="${match_lhs}$(<~/.dir_colors)"
@@ -66,11 +57,11 @@ else
 	fi
 fi
 
-
-# Try to keep environment pollution down
 unset use_color safe_term match_lhs
 
-# functions
+
+
+# FUNCTIONS
 
 assignProxy(){
    PROXY_ENV="http_proxy ftp_proxy https_proxy all_proxy no_proxy HTTP_PROXY HTTPS_PROXY FTP_PROXY NO_PROXY ALL_PROXY"
@@ -85,29 +76,31 @@ assignProxy(){
    echo "Proxy set to $1"
 }
 
-clrProxy(){
-   assignProxy ""
-}
 
-isuProxy(){
-   #user=YourUserName
-   #read -p "Password: " -s pass &&  echo -e " "
-   #proxy_value="http://$user:$pass@ProxyServerAddress:Port"
-   proxy_value="http://192.168.1.2:3128"
-   assignProxy $proxy_value  
-}
+#clrProxy(){
+#   assignProxy ""
+#}
 
 
-# env variables
+#setProxy(){
+#   #user=YourUserName
+#   #read -p "Password: " -s pass &&  echo -e " "
+#   #proxy_value="http://$user:$pass@ProxyServerAddress:Port"
+#   assignProxy $proxy_value  
+#}
+
+
+
+# ENVIRONMENT
 
 export PATH=${PATH}:~/scripts
 export EDITOR='vim'
 export BROWSER='firefox'
-
 export SYSTEMC=/usr/local/systemc/
 
 
-# aliases
+
+# ALIASES
 
 alias rm='rm -i'
 alias mv='mv -i'
