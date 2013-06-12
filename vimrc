@@ -2,7 +2,7 @@
 
 colorscheme default
 
-" auto cd to pwd
+" auto cd
 autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
 
 " syntax highlighting
@@ -14,6 +14,20 @@ set tabstop=4
 set expandtab
 set autoindent
 set number
+
+" search
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch 
+
+" cmd autocomplete
+set wildmenu
+set wildmode=longest:full,full
+
+" splits
+set splitright
+set splitbelow
 
 " mappings
 map <F2> gqip
