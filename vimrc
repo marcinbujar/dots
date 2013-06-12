@@ -1,22 +1,19 @@
 "mmd vimrc
 
-"colors
 colorscheme default
 
-" CDC = Change to Directory of Current file
-command CDC cd %:p:h
+" auto cd to pwd
+autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
 
-map <F2> gqip
-
-" turn on file type recognition
+" syntax highlighting
 filetype on
+syntax on
 
-" turn on syntax hiliting
-syn on
+" tabs
+set tabstop=4
+set expandtab
+set autoindent
+set number
 
-" show line numbers
-set nu
-
-" tab = 4 spaces
-set ts=4
-set et
+" mappings
+map <F2> gqip
