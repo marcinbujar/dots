@@ -104,7 +104,6 @@ alive() {
 export PATH=${PATH}:~/scripts
 export EDITOR='vim'
 export BROWSER='firefox'
-export SYSTEMC=/usr/local/systemc/
 
 
 
