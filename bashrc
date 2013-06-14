@@ -113,7 +113,8 @@ alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -ip'
 
-alias b='cd ..'
+alias up='cd ..'
+alias bb='cd -'
 alias ps='ps -el'
 alias ll='ls -l'
 
