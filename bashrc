@@ -106,24 +106,29 @@ export EDITOR='vim'
 export BROWSER='firefox'
 
 
-
 # ALIASES
 
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -ip'
-
 alias up='cd ..'
 alias bb='cd -'
 alias ps='ps -el'
 alias ll='ls -l'
+alias df='df -H'
+
+alias py='python2'
 
 alias pacfiles='find /etc -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
 alias arch='alsi -a'
 alias rtfn='elinks https://www.archlinux.org/feeds/news/'
+
+alias ports='netstat -tulanp'
 
 alias mouseOff='xinput set-int-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 8 1'
 alias mouseOn='xinput set-int-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 8 0'
 
 alias brightInc='xbacklight -inc 10'
 alias brightDec='xbacklight -dec 10'
+
+alias hax='echo -ne "\e[31m" ; while true ; do echo -ne "\e[$(($RANDOM % 2 + 1))m" ; tr -c "[:print:]" " " < /dev/urandom | dd count=1 bs=50 2> /dev/null ; sleep 0.1s ; done'
