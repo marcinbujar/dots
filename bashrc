@@ -125,8 +125,8 @@ alias rtfn='elinks https://www.archlinux.org/feeds/news/'
 
 alias ports='netstat -tulanp'
 
-alias mouseOff='xinput set-int-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 8 1'
-alias mouseOn='xinput set-int-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 8 0'
+alias mouseOn='xinput set-int-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 8 1'
+alias mouseOff='xinput set-int-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 8 0'
 
 alias brightInc='xbacklight -inc 10'
 alias brightDec='xbacklight -dec 10'
