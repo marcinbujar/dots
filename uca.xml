@@ -1,0 +1,31 @@
+<?xml encoding="UTF-8" version="1.0"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<unique-id>1375166639523874-1</unique-id>
+	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<description>Terminal in current directory</description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>object-rotate-left</icon>
+	<name>Rotate Left</name>
+	<unique-id>1375166661309529-2</unique-id>
+	<command>jpegtran -outfile %n -rotate 270 %n</command>
+	<description>Lossless JPEG rotation to the left</description>
+	<patterns>*.jpg;*.JPG;*.jpeg;*.JPEG</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>object-rotate-right</icon>
+	<name>Rotate Right</name>
+	<unique-id>1375166679147195-3</unique-id>
+	<command>jpegtran -outfile %n -rotate 90 %n</command>
+	<description>Lossless JPEG rotation to the right</description>
+	<patterns>*.jpg;*.JPG;*.jpeg;*.JPEG</patterns>
+	<image-files/>
+</action>
+</actions>
