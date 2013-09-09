@@ -131,4 +131,6 @@ alias mouseOff='xinput set-int-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 
 alias brightInc='xbacklight -inc 10'
 alias brightDec='xbacklight -dec 10'
 
+alias rtems='export PATH=$HOME/Desktop/rtems/4.11/bin:$PATH'
+
 alias hax='echo -ne "\e[31m" ; while true ; do echo -ne "\e[$(($RANDOM % 2 + 1))m" ; tr -c "[:print:]" " " < /dev/urandom | dd count=1 bs=50 2> /dev/null ; sleep 0.1s ; done'
