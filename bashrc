@@ -127,10 +127,11 @@ alias ports='netstat -tulanp'
 
 alias mouseOn='xinput set-int-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 8 1'
 alias mouseOff='xinput set-int-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 8 0'
-
 alias brightInc='xbacklight -inc 10'
 alias brightDec='xbacklight -dec 10'
+alias hdmiOn='xrandr --output HDMI1 --mode 1920x1080i --right-of LVDS1'
+alias hdmiOff='xrandr --output HDMI1 --off'
 
-alias rtems='export PATH=$HOME/Desktop/rtems/4.11/bin:$PATH'
+alias rtems='export PATH=$HOME/Desktop/compilers-rtems/4.11/bin:$PATH'
 
 alias hax='echo -ne "\e[31m" ; while true ; do echo -ne "\e[$(($RANDOM % 2 + 1))m" ; tr -c "[:print:]" " " < /dev/urandom | dd count=1 bs=50 2> /dev/null ; sleep 0.1s ; done'
