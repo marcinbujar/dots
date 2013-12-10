@@ -124,13 +124,16 @@ alias arch='alsi -a'
 alias rtfn='elinks https://www.archlinux.org/feeds/news/'
 
 alias ports='netstat -tulanp'
+alias timeSync='sudo /usr/bin/ntpd -g ; sudo /usr/bin/hwclock -w'
 
 alias mouseOn='xinput set-int-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 8 1'
 alias mouseOff='xinput set-int-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 8 0'
 alias brightInc='xbacklight -inc 10'
 alias brightDec='xbacklight -dec 10'
-alias hdmiOn='xrandr --output HDMI1 --mode 1920x1080i --right-of LVDS1'
+alias hdmiOn='xrandr --output HDMI1 --mode 1920x1200 --right-of LVDS1'
 alias hdmiOff='xrandr --output HDMI1 --off'
+alias multiOn='xrandr --output LVDS1 --off && xrandr --output VGA1 --mode 1280x1024 --rate 60.0 && xrandr --output HDMI1 --mode 1280x1024 --rate 60.0 --right-of VGA1'
+alias multiOff='xrandr --output HDMI1 --off && xrandr --output VGA1 --off && xrandr --output LVDS1 --mode 1366x768 --rate 60.0'
 
 alias rtems='export PATH=$HOME/Desktop/compilers-rtems/4.11/bin:$PATH'
 
